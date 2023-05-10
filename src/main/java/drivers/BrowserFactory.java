@@ -1,6 +1,7 @@
 package main.java.drivers;
 
-import org.openqa.selenium.By;
+
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,10 +20,10 @@ public class BrowserFactory {
     public static void initBrowser(String name) {
         switch (name) {
             case "chrome" -> {
-                DRIVER_INSTANCE.set(WebDriverManager.setupChrome());
+                DRIVER_INSTANCE.set(main.java.drivers.WebDriverManager.setupChrome());
             }
             case "firefox" -> {
-                DRIVER_INSTANCE.set(WebDriverManager.setupFirefox());
+                DRIVER_INSTANCE.set(main.java.drivers.WebDriverManager.setupFirefox());
             }
             default -> throw new RuntimeException("invalid browser " + name);
         }
